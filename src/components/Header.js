@@ -3,8 +3,8 @@ import '../style/Header.css';
 function Header() {
     return <div className="question--header">
         <div>
-            <h1>Quiz Quiz Quiz!</h1>
-            <span>기본상식</span>
+            <h1>광고</h1>
+            <span>상식퀴즈</span>
         </div>
     </div>;
 }

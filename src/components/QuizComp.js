@@ -123,7 +123,7 @@ function QuizComp() {
         <div className="question--inner">
             { !showQuiz ? (
                 <div className="question--item intro">
-                    <h2>퀴즈 시작하시겠습니까?</h2>
+                    <h2>퀴즈를 시작하시겠습니까?</h2>
                     <button className="question--btn" onClick={()=>startTimer()}>START</button>
                 </div>
             ) : (
@@ -132,7 +132,7 @@ function QuizComp() {
                     { seconds >= 0 && seconds < MAX_COUNT-3 ?
                         (
                             <div className="question--title">
-                                <p>첫번째 문제</p>
+                                <p>문제</p>
                                 { quizList[currentIndex.current].question }
                                 <div className="question--seconds">
                                     { (MAX_COUNT-3) - seconds }
