@@ -1,5 +1,7 @@
+
+
 function Bottom() {
-    return <h1>Bottom</h1>;
+    return <div></div>
 }
 
 export default Bottom;

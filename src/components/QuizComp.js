@@ -120,32 +120,34 @@ function QuizComp() {
     // }
 
     return (
-        <>
-            <h1>Quiz Component</h1>
+        <div className="question--inner">
             { !showQuiz ? (
-              <>
-                  <button onClick={()=>startTimer()}>Start</button>
-              </>
+                <div className="question--item intro">
+                    <h2>퀴즈 시작하시겠습니까?</h2>
+                    <button className="question--btn" onClick={()=>startTimer()}>START</button>
+                </div>
             ) : (
-                <>
+                <div className="question--item">
                     {/*<button onClick={()=>toggleListen()}>Sound { listenQuestion ? 'On' : 'Off' }</button>*/}
                     { seconds >= 0 && seconds < MAX_COUNT-3 ?
                         (
                             <div className="question--title">
-                                Q. { quizList[currentIndex.current].question }
+                                <p>첫번째 문제</p>
+                                { quizList[currentIndex.current].question }
                                 <div className="question--seconds">
                                     { (MAX_COUNT-3) - seconds }
                                 </div>
                             </div>
                         ) : (
                             <div className="answer--title">
-                                정답 : { quizList[currentIndex.current].answer }
+                                <p>정답</p>
+                                { quizList[currentIndex.current].answer }
                             </div>
                         )
                     }
-                </>
+                </div>
             ) }
-        </>
+        </div>
     );
 }
 
