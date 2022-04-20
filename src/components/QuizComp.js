@@ -1,12 +1,12 @@
 import React, {useEffect, useRef, useState} from 'react';
 import '../style/QuizComp.css';
-
+import anime from 'animejs';
 import jsonData from "../list";
 // console.log(jsonData);
 
 function QuizComp() {
     const quizList = jsonData;
-    const MAX_COUNT = 13;
+    const MAX_COUNT = 7;
     // let voices = [];
 
     // useState Hooks
@@ -33,6 +33,12 @@ function QuizComp() {
 
     const startTimer = () => {
         // console.log("start!");
+        const textWrapper = document.querySelector('.ml2');
+        if(textWrapper) {
+            // textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+            textWrapper.innerHTML = quizList[currentIndex.current].question;
+        }
+
         setShowQuiz(true);
         timerId.current = setInterval(() => {
             setSeconds(prevState => prevState +1);
@@ -57,10 +63,29 @@ function QuizComp() {
     useEffect(() => {
         // console.log('Seconds: ', seconds);
         if(seconds >= MAX_COUNT) {
+            const textWrapper = document.querySelector('.ml2');
+            if(textWrapper) {
+                textWrapper.innerHTML = quizList[currentIndex.current+1].question;
+            }
             next();
+        } else if(seconds === MAX_COUNT-3) {
+            const textWrapper = document.querySelector('.ml2');
+            if(textWrapper) {
+                textWrapper.innerHTML = quizList[currentIndex.current].answer;
+                textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+                anime.timeline({loop: false})
+                    .add({
+                        targets: '.ml2 .letter',
+                        scale: [4,1],
+                        opacity: [0,1],
+                        translateZ: 0,
+                        easing: "easeOutExpo",
+                        duration: 950,
+                        delay: (el, i) => 70*i
+                    });
+            }
         }
     }, [seconds])
-
 
     // tts
 
@@ -129,22 +154,13 @@ function QuizComp() {
             ) : (
                 <div className="question--item">
                     {/*<button onClick={()=>toggleListen()}>Sound { listenQuestion ? 'On' : 'Off' }</button>*/}
-                    { seconds >= 0 && seconds < MAX_COUNT-3 ?
-                        (
-                            <div className="question--title">
-                                <p>문제</p>
-                                { quizList[currentIndex.current].question }
-                                <div className="question--seconds">
-                                    { (MAX_COUNT-3) - seconds }
-                                </div>
-                            </div>
-                        ) : (
-                            <div className="answer--title">
-                                <p>정답</p>
-                                { quizList[currentIndex.current].answer }
-                            </div>
-                        )
-                    }
+                    <div className="question--title">
+                        <p>{ seconds >= 0 && seconds < MAX_COUNT-3 ? "문제" : "정답" }</p>
+                        <h1 className="ml2">Sunny mornings</h1>
+                        { seconds >= 0 && seconds < MAX_COUNT-3 &&  <div className="question--seconds">
+                            { (MAX_COUNT-3) - seconds }
+                        </div>}
+                    </div>
                 </div>
             ) }
         </div>
