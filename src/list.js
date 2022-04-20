@@ -5,10 +5,14 @@ let list = [{"answer_detail":"아편전쟁은 1839년~1842년에 걸쳐 영국�
 let tempList = [];
 
 list.forEach(item => {
-   tempList.push({
-       question: item.question_text,
-       answer: item.question,
-   })
+   let answerTemp = item.answer_caption.split(";");
+   try {
+       tempList.push({
+           question: item.question_text,
+           answer: answerTemp[item.answer-1],
+           level: item.level,
+       });
+   }catch(e){}
 });
 
 
