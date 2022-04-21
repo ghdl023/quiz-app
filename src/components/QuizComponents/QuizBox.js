@@ -1,8 +1,13 @@
 import {useEffect, useRef, useState} from 'react';
 import anime from 'animejs';
+import TimerBox from "../TimerComponents/TimerBox";
+import QuizTextBox from "./QuizTextBox";
+import StarBox from '../StarComponents/StarBox';
+import '../../style/QuizComptStyle/QuizBox.css';
+
 
 const QuizBox = ({ setShowQuiz, quizList }) => {
-    const MAX_COUNT = 7;
+    const MAX_COUNT = 13;
     // let voices = [];
 
     // useState Hooks
@@ -151,14 +156,13 @@ const QuizBox = ({ setShowQuiz, quizList }) => {
     // }
 
     return (
-        <div className="question--item">
+        <div>
             {/*<button onClick={()=>toggleListen()}>Sound { listenQuestion ? 'On' : 'Off' }</button>*/}
-            <div className="question--title">
+            <div>
+                <StarBox length={quizList[currentIndex.current].level}/>
                 <p>{ seconds >= 0 && seconds < MAX_COUNT-3 ? "문제" : "정답" }</p>
-                <h1 className="ml2">Sunny mornings</h1>
-                { seconds >= 0 && seconds < MAX_COUNT-3 &&  <div className="question--seconds">
-                    { (MAX_COUNT-3) - seconds }
-                </div>}
+                <QuizTextBox/>
+                { seconds >= (MAX_COUNT-8) && seconds < (MAX_COUNT-3) && <TimerBox seconds_text={(MAX_COUNT-3) - seconds}/>}
             </div>
         </div>
     );

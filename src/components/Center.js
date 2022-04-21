@@ -1,18 +1,18 @@
 import React, {useState} from 'react';
-import '../style/QuizComp.css';
+import '../style/Center.css';
 import LoadingBox from "./QuizComponents/LoadingBox";
 import QuizBox from "./QuizComponents/QuizBox";
 import jsonData from "../list";
 
 function shuffle(array) { array.sort(() => Math.random() - 0.5); return array;}
 
-const QuizComp = () => {
+const Center = () => {
     // useState Hooks
     // const [quizList, setQuizList] = useState([]);
     const quizList= shuffle(jsonData);
     const [showQuiz, setShowQuiz] = useState(false);
     return (
-        <div className="question--inner">
+        <div>
             { !showQuiz ?
                 <LoadingBox setShowQuiz={setShowQuiz} len={quizList.length}/> :
                 <QuizBox setShowQuiz={setShowQuiz} quizList={quizList}/>
@@ -21,4 +21,4 @@ const QuizComp = () => {
     );
 }
 
-export default QuizComp;
+export default Center;

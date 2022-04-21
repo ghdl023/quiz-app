@@ -1,7 +1,7 @@
 import '../style/Header.css';
 
 function Header() {
-    return <div className="question--header">
+    return <div className="header">
         <div>
             <h1>광고</h1>
             <span>상식퀴즈</span>

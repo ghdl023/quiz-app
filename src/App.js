@@ -1,13 +1,13 @@
 import './style/App.css';
 import Header from "./components/Header";
-import QuizComp from "./components/QuizComp";
+import Center from "./components/Center";
 import Bottom from "./components/Bottom";
 
 function App() {
   return (
     <div className="App">
         <Header/>
-        <QuizComp/>
+        <Center/>
         <Bottom/>
     </div>
   );
