@@ -5,9 +5,7 @@ import { faStar } from '@fortawesome/free-solid-svg-icons'
 
 const Star = () => {
     return (
-        <>
-            <FontAwesomeIcon icon={faStar} color="yellow"/>
-        </>
+        <FontAwesomeIcon icon={faStar} color="yellow"/>
     );
 };
 

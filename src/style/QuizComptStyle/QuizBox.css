@@ -1,0 +1,19 @@
+.quiz-box { }
+.quiz-box span {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.quiz-box p {
+    max-width: 768px;
+    width: calc(100% - 20px);
+    word-break: break-word;
+    margin: 40px auto auto;
+    padding: 0 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .quiz-box p {
+        margin-top: 20px;
+    }
+}

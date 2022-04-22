@@ -3,7 +3,7 @@ import '../../style/QuizComptStyle/QuizTextBox.css';
 
 const QuizTextBox = () => {
     return (
-        <h1 className="ml2">Sunny mornings</h1>
+        <p className="ml2">Sunny mornings</p>
     );
 };
 

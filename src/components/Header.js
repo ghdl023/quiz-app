@@ -1,12 +1,30 @@
 import '../style/Header.css';
+import ContainerStyles from './CommonStyles/ContainerStyles'
+import BannerStyles from './CommonStyles/BannerStyles'
+import styled from 'styled-components'
+
+const HeaderStyle  = styled.div`
+    position: relative;
+    z-index: 1;
+`
 
 function Header() {
-    return <div className="header">
-        <div>
-            <h1>광고</h1>
-            <span>상식퀴즈</span>
-        </div>
-    </div>;
+    return <ContainerStyles>
+        <HeaderStyle className="container-inner">
+            <BannerStyles>
+                <div className="banner-lg">광고</div>
+                <div className="banner-md">광고</div>
+                <div className="banner-md">광고</div>
+                <div className="banner-md">광고</div>
+                <div className="banner-md">광고</div>
+                <div className="banner-lg">광고</div>
+                <div className="banner-md">광고</div>
+                <div className="banner-md">광고</div>
+                <div className="banner-md">광고</div>
+                <div className="banner-md">광고</div>
+            </BannerStyles>
+        </HeaderStyle>
+    </ContainerStyles>;
 }
 
 export default Header;
