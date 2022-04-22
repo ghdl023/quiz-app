@@ -15,9 +15,9 @@ const WrapStyle = styled.div`
 function App() {
     return (
         <WrapStyle>
-            <Header/>
+            {/*<Header/>*/}
             <Center/>
-            <Bottom/>
+            {/*<Bottom/>*/}
         </WrapStyle>
     );
 }
