@@ -1,14 +1,16 @@
-import React from 'react';
-import Star from './Star';
+import React, { createContext } from 'react';
 import '../../style/StarCompStyle/StarBox.css';
 
-const StarBox = ({ length }) => {
+const StarBoxContext = createContext();
+
+export const StarBox = (props) => {
+
+    const value = {};
+
     return (
-        <div className="star-box">
-            {[...Array(length)].map((x, i) =>
-                <Star key={i} />
-            )}
-        </div>
+        <StarBoxContext.Provider value={value}>
+          <div>{props.children}</div>
+        </StarBoxContext.Provider>
     );
 };
 

@@ -4,6 +4,7 @@ import TimerBox from "../TimerComponents/TimerBox";
 import QuizTextBox from "./QuizTextBox";
 import StarBox from '../StarComponents/StarBox';
 import '../../style/QuizComptStyle/QuizBox.css';
+import StarIcon from "../StarComponents/StarIcon";
 
 
 const QuizBox = ({ setShowQuiz, quizList }) => {
@@ -158,7 +159,11 @@ const QuizBox = ({ setShowQuiz, quizList }) => {
     return (
         <div className="quiz-box">
             {/*<button onClick={()=>toggleListen()}>Sound { listenQuestion ? 'On' : 'Off' }</button>*/}
-            <StarBox length={quizList[currentIndex.current].level}/>
+            <StarBox>
+                {[...Array(quizList[currentIndex.current].level)].map((x, i) =>
+                    <StarIcon key={i}/>
+                )}
+            </StarBox>
             <span>{ seconds >= 0 && seconds < MAX_COUNT-3 ? "문제" : "정답" }</span>
             <QuizTextBox/>
             { seconds >= (MAX_COUNT-8) && seconds < (MAX_COUNT-3) && <TimerBox seconds_text={(MAX_COUNT-3) - seconds}/>}
