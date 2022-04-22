@@ -156,14 +156,12 @@ const QuizBox = ({ setShowQuiz, quizList }) => {
     // }
 
     return (
-        <div>
+        <div className="quiz-box">
             {/*<button onClick={()=>toggleListen()}>Sound { listenQuestion ? 'On' : 'Off' }</button>*/}
-            <div>
-                <StarBox length={quizList[currentIndex.current].level}/>
-                <p>{ seconds >= 0 && seconds < MAX_COUNT-3 ? "문제" : "정답" }</p>
-                <QuizTextBox/>
-                { seconds >= (MAX_COUNT-8) && seconds < (MAX_COUNT-3) && <TimerBox seconds_text={(MAX_COUNT-3) - seconds}/>}
-            </div>
+            <StarBox length={quizList[currentIndex.current].level}/>
+            <span>{ seconds >= 0 && seconds < MAX_COUNT-3 ? "문제" : "정답" }</span>
+            <QuizTextBox/>
+            { seconds >= (MAX_COUNT-8) && seconds < (MAX_COUNT-3) && <TimerBox seconds_text={(MAX_COUNT-3) - seconds}/>}
         </div>
     );
 };
