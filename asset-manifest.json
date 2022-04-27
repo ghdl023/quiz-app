@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/quiz-app/static/css/main.4ef8500e.css",
-    "main.js": "/quiz-app/static/js/main.2d74f1ef.js",
+    "main.js": "/quiz-app/static/js/main.92d4c49f.js",
     "static/js/787.9e90ff23.chunk.js": "/quiz-app/static/js/787.9e90ff23.chunk.js",
     "index.html": "/quiz-app/index.html",
     "main.4ef8500e.css.map": "/quiz-app/static/css/main.4ef8500e.css.map",
-    "main.2d74f1ef.js.map": "/quiz-app/static/js/main.2d74f1ef.js.map",
+    "main.92d4c49f.js.map": "/quiz-app/static/js/main.92d4c49f.js.map",
     "787.9e90ff23.chunk.js.map": "/quiz-app/static/js/787.9e90ff23.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4ef8500e.css",
-    "static/js/main.2d74f1ef.js"
+    "static/js/main.92d4c49f.js"
   ]
 }
