@@ -30,6 +30,12 @@ const DivStyles = styled.div`
     }
 `;
 
+const InfoDiv = styled.div`
+    margin-top:30px;
+    color:rgba(255,255,255, 0.65);
+    font-size:12px;
+`;
+
 function shuffle(array) { array.sort(() => Math.random() - 0.5); return array;}
 
 const Center = () => {
@@ -48,6 +54,9 @@ const Center = () => {
                             <QuizBox setShowQuiz={setShowQuiz} quizList={quizList}/>
                         }
                     </>
+                    <InfoDiv>
+                        <span>본 사이트에서 사용중인 일부 데이터는 '하루1분시사상식' (<a href="http://115.90.24.101/m/index" target="_blank">http://115.90.24.101/m/index</a>)에서 가져와 활용하고 있습니다. 문제시 gwee1216@naver.com 연락을 주신다면 해당 데이터를 사용하지 않겠습니다.</span>
+                    </InfoDiv>
                 </DivStyles>
             </div>
         </ContainerStyles>
