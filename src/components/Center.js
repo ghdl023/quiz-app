@@ -7,7 +7,6 @@ import ContainerStyles from "./CommonStyles/ContainerStyles"
 import styled from "styled-components"
 
 const DivStyles = styled.div`
-    position: relative;
     color: #fff;
     padding: 14% 0 10%;
     margin: auto;
@@ -31,9 +30,10 @@ const DivStyles = styled.div`
 `;
 
 const InfoDiv = styled.div`
-    margin-top:30px;
     color:rgba(255,255,255, 0.65);
     font-size:12px;
+    position: absolute;
+    bottom:15px;
 `;
 
 function shuffle(array) { array.sort(() => Math.random() - 0.5); return array;}
