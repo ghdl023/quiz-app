@@ -1,6 +1,7 @@
 {
   "name": "quiz-app",
   "version": "0.1.0",
+  "homepage": "https://ghdl023.github.io/quiz-app",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
