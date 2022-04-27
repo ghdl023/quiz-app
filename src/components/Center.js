@@ -11,6 +11,7 @@ const DivStyles = styled.div`
     color: #fff;
     padding: 14% 0 10%;
     margin: auto;
+    height:100%;
     
     & > span {
         position: absolute;
