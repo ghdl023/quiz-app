@@ -7,6 +7,7 @@ const ButtonStyles = styled.button`
     font-size: 1rem;
     color: #fff;
     padding: 12px 24px; 
+    cursor:pointer;
 `;
 
 export default ButtonStyles;
